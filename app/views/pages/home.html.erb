@@ -1,6 +1,15 @@
 <h1>Pages#home</h1>
 <p>Find me in app/views/pages/home.html.erb</p>
+<%= render 'courses/form', course:@new_course %>
+<div class="row">
 
-<% @courses.each do |course| %>
-    <%= render 'courses/course', course:course %>
-<% end %>
+  <% @courses.each do |course| %>
+  <%= link_to course_path(course) do %>
+
+  <div class="col-sm-3">
+    <%= render partial: 'courses/course', locals: { course:course } %>
+  </div>
+
+  <% end %>
+  <% end %>
+</div>

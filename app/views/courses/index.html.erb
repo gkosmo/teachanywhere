@@ -4,7 +4,7 @@
 <div class="slideDown">
 
 <% @courses.each do |course| %>
-   <%= link_to course_path(course) do %>
+<%= link_to course_path(course) do %>
     <%= render 'courses/course', course:course %>
     <% end %>
 <% end %>
