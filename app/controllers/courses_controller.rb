@@ -1,19 +1,20 @@
 class CoursesController < ApplicationController
-
-  def show
-
-  end
-
-  def edit
-
+  before_action :getCourse, only: [:show]
+  def create
   end
 
   def new
-
   end
 
-  def create
-
+  def index
+    @courses = Course.all
   end
 
+  def show
+  end
+
+  private
+  def getCourse
+    @course = Course.find(params[:id])
+  end
 end

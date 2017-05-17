@@ -5,3 +5,13 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+30.times do
+  text = Faker::Space.agency + "from" + Faker::Space.planet + "is lanetabout" +  Faker::Hipster.sentence
+
+Course.create({
+  user_id: User.last.id,
+  title:Faker::Educator.course,
+  content: text
+  });
+end

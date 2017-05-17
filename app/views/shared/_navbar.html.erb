@@ -1,7 +1,7 @@
 <div class="navbar-wagon">
   <!-- Logo -->
   <%= link_to root_path, class: "navbar-wagon-brand" do %>
-    <%= image_tag "zentangle_50px.png" %>
+    hey hey
   <% end %>
 
   <!-- Right Navigation -->
@@ -23,11 +23,11 @@
       <!-- Profile picture and dropdown -->
       <div class="navbar-wagon-item">
         <div class="dropdown">
-          <%= image_tag current_user.profile_picture || "http://placehold.it/30x30", class: "avatar dropdown-toggle", id: "navbar-wagon-menu", "data-toggle" => "dropdown" %>
+          <%= image_tag current_user.photo || "http://placehold.it/30x30", class: "avatar dropdown-toggle", id: "navbar-wagon-menu", "data-toggle" => "dropdown" %>
           <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
           <li><%= link_to "profile", user_path(current_user) %></li>
           <li><%= link_to "dashboard", dashboard_path %></li>
-          <li><% link_to "messages", conversations_index_path %></li>
+          <li></li>
           <li id="logout"><%= link_to "log out", destroy_user_session_path, method: "delete" %></li>
         </ul>
         </div>

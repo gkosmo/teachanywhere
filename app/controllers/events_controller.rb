@@ -1,19 +1,13 @@
 class EventsController < ApplicationController
-
-  def show
-
-  end
-
-  def edit
-
+  def create
   end
 
   def new
-
   end
 
-  def create
-
+  def index
   end
 
+  def show
+  end
 end
