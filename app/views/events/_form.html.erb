@@ -1,0 +1,12 @@
+<%= simple_form_for  event, url: course_events_path(@course), method: 'post'  do |form| %>
+<%= form.input :date, placeholder: "Date" %>
+<%= form.input :title, placeholder: "Title for this class" %>
+<%= form.input :content, placeholder: "Content of this class" %>
+<%= form.input :location, as: :string,  placeholder: "Location" %>
+<%= form.input :min_attendance, placeholder: "Minimum attendance" %>
+<%= form.input :max_attendance, placeholder: "Maximum attendance" %>
+<%= form.button :submit, class:"btn btn-primary" %>
+<% end %>
+
+<%= content_for(:after_js) do %>
+<% end %>

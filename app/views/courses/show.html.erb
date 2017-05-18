@@ -2,3 +2,6 @@
 <h2> <%= @course.content %></h2>
 <br>
 <h2> Given by: <%= @course.user.email %></h2>
+<% if @teacher then %>
+ <%= render 'events/form', event:@event%>
+<% end %>
