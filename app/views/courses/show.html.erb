@@ -5,6 +5,19 @@
 <h2> <%= @course.content %></h2>
 <br>
 <h2> Given by: <%= @course.user.email %></h2>
+<% if @current_user_course_subscription.empty? %>
+<%= simple_form_for @subscription , url: course_subscriptions_path(@course) do |form| %>
+<%= form.button :submit,label:"Subscribe to This Course", class:"btn btn-lg btn-primary" %>
+<% end %>
+<% else %>
+ <h3 style="red"> subscribed !</h3>
+ <% end %>
+<b> They've subscribed already: </b>
+ <% @course.subscriptions.each do |sub| %>
+  <p>
+    <%= sub.user.email %>
+  </p>
+ <% end %>
 </div>
 
 <div class="col-sm-4">

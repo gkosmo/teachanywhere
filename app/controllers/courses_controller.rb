@@ -26,6 +26,8 @@ class CoursesController < ApplicationController
 
   def show
     @event = Event.new({user: current_user, course: @course})
+    check_attendance
+    @subscription = Subscription.new() if @current_user_course_subscription.empty?
     @teacher = @course.user == current_user
   end
 
@@ -35,5 +37,11 @@ class CoursesController < ApplicationController
   end
   def course_params
     params.require(:course).permit(:title, :content)
+  end
+
+  def check_attendance
+  #false if no attendance
+    course = Course.find(params[:id])
+    @current_user_course_subscription = course.subscriptions.where(user: current_user)
   end
 end
