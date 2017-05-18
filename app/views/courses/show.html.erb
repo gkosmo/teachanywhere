@@ -21,8 +21,10 @@
 </div>
 
 <div class="col-sm-4">
+  <b>classes: </b>
   <% @course.events.each do |event| %>
     <%= render 'events/event', event:event%>
+
   <% end %>
 </div>
 </div>
