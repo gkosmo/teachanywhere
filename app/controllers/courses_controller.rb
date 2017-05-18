@@ -25,6 +25,8 @@ class CoursesController < ApplicationController
   end
 
   def show
+    @event = Event.new({user: current_user, course: @course})
+    @teacher = @course.user == current_user
   end
 
   private
