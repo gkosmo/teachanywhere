@@ -1,7 +1,25 @@
+<div class="row">
+<div class="col-sm-8">
+
 <h1> <%= @course.title %> </h1>
 <h2> <%= @course.content %></h2>
 <br>
 <h2> Given by: <%= @course.user.email %></h2>
+</div>
+
+<div class="col-sm-4">
+  <% @course.events.each do |event| %>
+    <%= render 'events/event', event:event%>
+  <% end %>
+</div>
+</div>
+
+<div class="row">
+  <div class="col-sm-4 col-sm-offset-4">
+
 <% if @teacher then %>
- <%= render 'events/form', event:@event%>
+  <%= render 'events/form', event:@event%>
 <% end %>
+</div>
+
+</div>
