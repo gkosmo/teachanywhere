@@ -1,0 +1,5 @@
+<%= simple_form_for(review,  url: course_reviews_path(@course), method: 'post' ) do |form| %>
+  <%= form.input :content, placeholder: "Your Review" %>
+  <%= form.button :submit, class:"btn btn-primary" %>
+
+<% end %>

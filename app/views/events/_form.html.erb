@@ -1,3 +1,7 @@
+<h4>
+  <b>Create an Event </b>
+</h4>
+
 <%= simple_form_for  event, url: course_events_path(@course), method: 'post'  do |form| %>
 <%= form.input :date, placeholder: "Date" %>
 <%= form.input :title, placeholder: "Title for this class" %>

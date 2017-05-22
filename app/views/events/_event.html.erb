@@ -1,25 +1,36 @@
 <div class="row" style="border-style: groove">
 
-<div class="col-sm-6">
+  <div class="col-sm-6">
 
-  <h4>  what: <b>  <%= event.title %> </b></h4>
-  <h4> what what ? <b> <%= event.content %> </b> </h4>
-  <h4> when: <b> <%= event.date %> </b></h4>
-  <h4> where: <b> <%= event.location %> </b> </h4>
+    <h4>  what: <b>  <%= event.title %> </b></h4>
+    <h4> what what ? <b> <%= event.content %> </b> </h4>
+    <h4> when: <b> <%= event.date %> </b></h4>
+    <h4> where: <b> <%= event.location %> </b> </h4>
 
-</div>
+  </div>
 
-<div class="col-sm-6">
-  <h4> How many: <%= event.attendances.count %> </h4>
-  <h4>min attendance  for course: <%= event.min_attendance %> </h4>
-  <h4>max attendance  for course: <%= event.max_attendance %> </h4>
-  <% if event.attendances.where(user: current_user).empty? %>
-     <%= simple_form_for Attendance.new(event: event), url: course_event_attendances_path(event.course, event) do |form| %>
-     <%= form.submit 'submit' %>
-     <% end %>
-  <% else %>
+  <div class="col-sm-6">
+    <h4> How many: <%= event.attendances.count %> </h4>
+    <h4>min attendance  for course: <%= event.min_attendance %> </h4>
+    <h4>max attendance  for course: <%= event.max_attendance %> </h4>
+    <% unless teacher %>
+      <% if event.attendances.where(user: current_user).empty? && event.attendances.length < event.max_attendance %>
+        <%= simple_form_for Attendance.new(event: event), url: course_event_attendances_path(event.course, event) do |form| %>
+          <%= form.submit 'submit' %>
+        <% end %>
+      <% elsif event.attendances.length == event.max_attendance %>
+            <h5> Max out class </h5>
+      <%else %>
     <h7 class="btn btn-warning"> <%= event.attendances.where(user: current_user).first.status %> </h7>
+    <% end %>
   <% end %>
+   <h5> <b>attendees: </b></h5>
+   <ul>
 
-</div>
+  <% event.attendances.each do |attendance| %>
+  <li> <h6> <%= attendance.user.email %></h6> </li>
+  <% end %>
+</ul>
+
+  </div>
 </div>

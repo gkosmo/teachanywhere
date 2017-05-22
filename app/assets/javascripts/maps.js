@@ -11,46 +11,47 @@ google.maps.event.addDomListener(flat_address, 'keydown', function(e) {
 }
 });
 function onPlaceChanged() {
-var place = this.getPlace();
-console.log(this + "in onPlaceChanged");
-var components = getAddressComponents(place);
-$('#event_location').trigger('blur').val(components.address);
+  var place = this.getPlace();
+    console.log(this + "in onPlaceChanged");
+    console.log(place);
+      $('#event_location').trigger('blur').val(place.formatted_address);
 //$('#party_zip_code').val(components.zip_code);
 //$('#party_city').val(components.city);
 // if (components.country_code) {
 // $('#party_country').val(components.country_code);
 // }
 }
-function getAddressComponents(place) {
+    function getAddressComponents(place) {
 // If you want lat/lng, you can look at:
 // - place.geometry.location.lat()
 // - place.geometry.location.lng()
-var street_number = null;
-var route = null;
-var zip_code = null;
-var city = null;
-var country_code = null;
-for (var i in place.address_components) {
-var component = place.address_components[i];
-for (var j in component.types) {
-  var type = component.types[j];
-  if (type == 'street_number') {
-    street_number = component.long_name;
-  } else if (type == 'route') {
-    route = component.long_name;
-  } else if (type == 'postal_code') {
-    zip_code = component.long_name;
-  } else if (type == 'locality') {
-    city = component.long_name;
-  } else if (type == 'country') {
-    country_code = component.short_name;
-  }
-}
-}
-return {
-address: street_number == null ? route : (street_number + ' ' + route),
-zip_code: zip_code,
-city: city,
-country_code: country_code
-};
+// var street_number = null;
+// var route = null;
+// var zip_code = null;
+// var city = null;
+// var country_code = null;
+// for (var i in place.address_components) {
+// var component = place.address_components[i];
+// for (var j in component.types) {
+//   var type = component.types[j];
+//   if (type == 'street_number') {
+//     street_number = component.long_name;
+//   } else if (type == 'route') {
+//     route = component.long_name;
+//   } else if (type == 'postal_code') {
+//     zip_code = component.long_name;
+//   } else if (type == 'locality') {
+//     city = component.long_name;
+//   } else if (type == 'country') {
+//     country_code = component.short_name;
+//   }
+// }
+// }
+// return {
+// address: street_number == null ? route : (street_number + ' ' + route),
+// zip_code: zip_code,
+// city: city,
+// country_code: country_code
+// } ;
+    return place;
 }
