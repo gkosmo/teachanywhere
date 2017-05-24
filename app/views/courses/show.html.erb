@@ -20,14 +20,6 @@
  <% end %>
 </div>
 
-<div class="col-sm-4">
-  <b>classes: </b>
-  <% @course.events.each do |event| %>
-    <%= render 'events/event', event:event, teacher: @teacher%>
-
-  <% end %>
-</div>
-</div>
 
 <div class="row">
   <div class="col-sm-4">
@@ -47,4 +39,18 @@
     <% end %>
 
   </div>
+</div>
+
+<div class="row">
+  <div class="col-sm-12">
+
+  <b>classes: </b>
+  <% @course.events.each do |event| %>
+  <div class="col-sm-4">
+    <%= render 'events/event', event:event, teacher: @teacher%>
+  </div>
+  <% end %>
+</div>
+</div>
+
 </div>

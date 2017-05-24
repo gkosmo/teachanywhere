@@ -1,1 +1,1 @@
-Rails app generated with [lewagon/rails-templates](https://github.com/lewagon/rails-templates), created by the [Le Wagon coding bootcamp](https://www.lewagon.com) team.
+ Coding exercise 2 :  Create a webapp where users can offer to teach something somewhere and users can subscribe to the whole course and attend the classes. Reviews and interactions come as well. 
