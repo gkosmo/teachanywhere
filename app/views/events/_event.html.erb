@@ -1,4 +1,6 @@
 <div class="row" style="border-style: groove">
+  <%= javascript_include_tag "https://cdn.rawgit.com/printercu/google-maps-utility-library-v3-read-only/master/markerclusterer/src/markerclusterer_compiled.js" %>
+  <%= javascript_include_tag "https://cdn.rawgit.com/printercu/google-maps-utility-library-v3-read-only/master/infobox/src/infobox_packed.js" %>
 
   <div class="col-sm-6">
 
@@ -33,4 +35,32 @@
 </ul>
 
   </div>
+
+  <div id="<%= event.id %>" style='width: 200px; height: 200px;' class= 'img-res'>
+
+  </div>
+
 </div>
+
+
+
+<% content_for(:after_js) do %>
+<script type="text/javascript">
+ $(function(handler) {
+  handler = Gmaps.build('Google');
+  handler.buildMap({ provider: {}, internal: { id: <%= event.id%> } }, function(){
+    markers = handler.addMarkers([
+    {
+      "lat": <%= event.latitude %>,
+      "lng": <%= event.longitude %>,
+      "infowindow": "hello!"
+    }
+    ]);
+    handler.bounds.extendWith(markers);
+    handler.fitMapToBounds();
+    handler.getMap().setZoom(12);
+  });
+});
+
+</script>
+<%end%>

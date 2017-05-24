@@ -12,13 +12,20 @@
   </head>
   <body>
     <%= render 'shared/navbar' %>
+    <div class="container">
+      <%= yield %>
+      </div>
+      <%= javascript_include_tag 'application' %>
+      <% # javascript_include_tag "https://maps.google.com/maps/api/js" %>
 
-   <div class="container">
-     <%= yield %>
+          <%= yield(:after_js) %>
 
-   </div>
+  <!-- Include Google Maps JS library. You should use your *own* key
 
-    <%= render 'shared/flashes' %>
-    <%= javascript_include_tag 'application' %>
+  <script src="https://maps.google.com/maps/api/js?key=AIzaSyCaDssjTkalIWXw_mk68sGREktIzCU9Qpg"></script> -->
+
+  <!-- Include Dependencies of GMaps for Rails gem -->
+  <script src="//cdn.rawgit.com/mahnunchik/markerclustererplus/master/dist/markerclusterer.min.js" >
+</script>
   </body>
 </html>
