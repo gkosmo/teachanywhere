@@ -45,13 +45,23 @@
 #     })
 #     ev.save!
 #   end
-
-User.all.each do |us|
-  rand(1..6).times do
-      course = Course.all.sample
-      unless course.user == us || !Subscription.where(user: us, course: course).empty?
-        sub= Subscription.new(course: course, user: us)
-        sub.save!
-      end
-  end
-end
+#
+# User.all.each do |us|
+#   rand(1..6).times do
+#       course = Course.all.sample
+#       unless course.user == us || !Subscription.where(user: us, course: course).empty?
+#         sub= Subscription.new(course: course, user: us)
+#         sub.save!
+#       end
+#   end
+# end
+#
+# 10.times do
+#   text = Faker::HowIMetYourMother.quote
+#     course = Course.new({
+#     user_id: User.all.sample.id,
+#     title:Faker::Educator.course,
+#     content: text
+#    });
+#     course.save!
+# end

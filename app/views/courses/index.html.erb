@@ -2,10 +2,13 @@
 <p>Find me in app/views/course/index.html.erb</p>
 
 <div class="slideDown">
+<%= react_component "CourseList",
+      render(template: 'courses/index.json.jbuilder') %>
 
+      <h1> Booom</h1>
 <% @courses.each do |course| %>
-<%= link_to course_path(course) do %>
-    <%= render 'courses/course', course:course %>
+<% link_to course_path(course) do %>
+    <% render 'courses/course', course:course %>
     <% end %>
 <% end %>
 </div>

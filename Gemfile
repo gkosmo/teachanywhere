@@ -9,6 +9,14 @@ gem 'jbuilder', '~> 2.0'
 gem 'devise'
 gem 'redis'
 gem 'cloudinary', '1.1.0'
+gem 'js-routes', '~> 1.3'
+gem 'react-rails', '~> 1.8'
+
+source 'https://rails-assets.org' do
+  gem 'rails-assets-classnames'
+end
+
+
 gem 'sass-rails'
 gem 'jquery-rails'
 gem 'uglifier'
