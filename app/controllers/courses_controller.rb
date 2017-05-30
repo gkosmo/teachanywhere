@@ -33,6 +33,15 @@ class CoursesController < ApplicationController
     @reviews = Review.where(rewiew_id: @course.id)
     @review = Review.new()
   end
+  def upvote
+    @course = Course.find(params[:id])
+    if current_user.voted_for? @course
+      current_user.unvote_for @course
+    else
+      current_user.up_votes @course
+    end
+    redirect_to root_path
+  end
 
   private
   def getCourse

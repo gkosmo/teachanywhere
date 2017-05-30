@@ -8,4 +8,5 @@ class User < ApplicationRecord
   has_many :reviews
   has_many :subscriptions
   mount_uploader :photo, PhotoUploader
+  acts_as_voter
 end

@@ -1,10 +1,12 @@
 var CourseListItem = React.createClass({
   render: function() {
     return (
-      <a href={'courses/' + this.props.course.id} >
       <div className="course">
-        <div className="course-upvote">Course</div>
+      <div className="course-upvote"> <Upvote course={this.props.course} /> </div>
+
+      <a href={'courses/' + this.props.course.id} >
         <div className="course-body">
+
           <h3>{this.props.course.title}
           </h3>
           <p>{this.props.course.content}</p>
@@ -12,8 +14,8 @@ var CourseListItem = React.createClass({
         <div className="course-controls">
 
           </div>
-      </div>
     </a>
+  </div>
     );
   }
 });

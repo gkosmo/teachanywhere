@@ -8,6 +8,9 @@ Rails.application.routes.draw do
   root to: 'courses#index'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   resources :courses do
+    member do
+        post :upvote
+    end
     resources :subscriptions
     resources :reviews
     resources :events do
