@@ -12,7 +12,7 @@ var Upvote = React.createClass({
       <div className={divClasses} >
         <div className="course-arrow" onClick={this.handleClick}></div>
         <div className="course-count">
-            {this.state.course.votes}
+            {this.state.course.up_votes}
         </div>
       </div>
       );

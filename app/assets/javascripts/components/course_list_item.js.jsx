@@ -6,7 +6,6 @@ var CourseListItem = React.createClass({
 
       <a href={'courses/' + this.props.course.id} >
         <div className="course-body">
-
           <h3>{this.props.course.title}
           </h3>
           <p>{this.props.course.content}</p>
