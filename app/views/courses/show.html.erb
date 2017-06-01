@@ -26,11 +26,10 @@
 
 <% if @teacher then %>
   <%= render 'events/form', event:@event%>
-<% else %>
+<% end %>
 <b>reviews: </b>
 <% @reviews.each do |rew| %>
     <h5> <i><%= rew.content %> </i> by: <b> <%= rew.user.email %> </b>  </h5>
-<% end %>
 <% end %>
   </div>
   <div class="col-sm-6">
@@ -45,12 +44,15 @@
   <div class="col-sm-12">
 
   <b>classes: </b>
+
   <% @course.events.each do |event| %>
+
   <div class="col-sm-4">
     <%= render 'events/event', event:event, teacher: @teacher%>
   </div>
   <% end %>
 </div>
 </div>
+
 
 </div>
