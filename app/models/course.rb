@@ -4,6 +4,6 @@ class Course < ApplicationRecord
   has_many :subscriptions
   acts_as_votable
   def votes
-    this.votes_for.size
+    self.votes_for.size
   end
 end
