@@ -32,6 +32,18 @@ class CoursesController < ApplicationController
     @teacher = @course.user == current_user
     @reviews = Review.where(rewiew_id: @course.id)
     @review = Review.new()
+    @hash = Gmaps4rails.build_markers(@course.events) do |event, marker|
+      marker.lat event.latitude
+      marker.lng event.longitude
+      # marker.picture({
+      #             :url => ,
+      #             :width   => 32,
+      #             :height  => 32
+      #            })
+      marker.infowindow maxWidth: 80
+      marker.infowindow "<h4>#{event.title}</h4>
+                          <h5>#{event.title}</h5>"
+      end
   end
   def upvote
     @course = Course.find(params[:id])

@@ -1,32 +1,33 @@
 .course {
-  display: flex;
-  align-items: center;
-  padding: 20px;
+  word-wrap: break-word;
+//  display: flex;
+//  align-items: center;
+//  padding: 20px;
   border-radius: 3px;
   transition: all 0.15s ease;
 }
 
 /* Body design */
 .course-body {
-  flex: 1 1 auto;
+//  flex: 1 1 auto;
 }
 .course-body h3 {
   font-weight: bold;
-  font-size: 23px;
+//  font-size: 23px;
   margin-top: 0;
 }
 .course-body p {
   font-weight: lighter;
   color: #999999;
-  margin-bottom: 0;
+//  margin-bottom: 0;
 }
 
 /* Product image */
-.course-image {
-  border-radius: 10px;
-  margin-right: 20px;
-  width: 175px;
-}
+// .course-image {
+//   border-radius: 10px;
+//   margin-right: 20px;
+//   width: 175px;
+// }
 
 /* Upvote design */
 .course-upvote {
@@ -54,14 +55,14 @@
 
 /* Controls design */
 .course-controls {
-  display: flex;
-  align-items: center;
-  text-align: center;
-  margin: 0px;
+  // display: flex;
+  // align-items: center;
+  // text-align: center;
+  // margin: 0px;
 }
 .course-controls a {
   padding: 0 20px;
-  font-size: 17px;
+//  font-size: 17px;
   color: #E6E6E6;
 }
 .course-controls a:hover {
@@ -69,7 +70,7 @@
 }
 .course-controls-hidden a {
   color: transparent;
-  font-size: 15px;
+//  font-size: 15px;
   transition: all 0.15s ease;
   border-color: transparent;
 }

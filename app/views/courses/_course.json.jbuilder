@@ -1,7 +1,7 @@
 json.extract! course, :title, :content, :id
 
 json.user do
-	json.extract! course.user
+	json.extract! course.user, :email
 end
 json.up_votes course.votes_for.count
 if user_signed_in?
