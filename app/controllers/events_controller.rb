@@ -32,8 +32,8 @@ class EventsController < ApplicationController
   def show
   end
 
-  def attend
-      @event = Event.find(params[:event_id])
+  def attendance
+      @event = Event.find(params[:id])
 
       @attendance = Attendance.where({ user: current_user, event: @event})
       if @attendance.blank?

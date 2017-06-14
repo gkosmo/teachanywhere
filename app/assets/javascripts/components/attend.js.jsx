@@ -17,7 +17,7 @@ var Attend = React.createClass({
       var that = this;
       $.ajax({
         type: 'POST',
-        url: Routes.attendance_course_event_path({course_id: this.props.event.course, event_id: this.props.event.id, format: 'json'}),
+        url: Routes.attendance_course_event_path( that.props.event.course, that.props.event.id,  {format: 'json'}),
         success: function(data) {
           that.setState({ event: data });
         }
