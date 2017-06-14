@@ -10,6 +10,7 @@ var EventListItem = React.createClass({
           <p> Location: {this.props.event.location}</p>
           <h4>min attendance  for course: {this.props.event.min_attendance} </h4>
           <h4>max attendance  for course: {this.props.event.max_attendance} </h4>
+          <Attend event={this.props.event} />
         </div>
   </div>
     );

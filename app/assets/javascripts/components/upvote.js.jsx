@@ -23,7 +23,7 @@ var Upvote = React.createClass({
         type: 'POST',
         url: Routes.upvote_course_path(this.props.course.id, { format: 'json' }),
         success: function(data) {
-          that.setState({ product: data });
+          that.setState({ course: data });
         }
       });
     }
