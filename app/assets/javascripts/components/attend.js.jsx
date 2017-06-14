@@ -1,8 +1,13 @@
 var Attend = React.createClass({
   getInitialState: function() {
-    return {  event: this.props.event
+    return {  attended: false, event: this.props.event
     }
-  },
+  }
+  // constructor() {
+  //   this.state = { event: this.props.event };
+  // }
+
+  ,
   render: function() {
     var divClasses = classNames({
      "label-success": this.state.event.attended,
