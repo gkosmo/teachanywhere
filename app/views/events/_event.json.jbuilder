@@ -1,5 +1,4 @@
-#json.extract! event
-
-# json.user do
-# 	json.extract! course.user
-# end
+json.extract! event, :title, :content, :date, :min_attendance, :max_attendance, :location, :id, :course
+if user_signed_in?
+  json.attended  event.attendances.where(user: current_user).blank?
+end

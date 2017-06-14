@@ -52,7 +52,6 @@ class CoursesController < ApplicationController
     else
       current_user.up_votes @course
     end
-    redirect_to root_path
   end
 
   private

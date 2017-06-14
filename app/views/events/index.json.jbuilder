@@ -1,4 +1,4 @@
-json.courses do
+json.events do
   json.array! @course.events do |event|
     json.partial! "events/event", event: event
   end
