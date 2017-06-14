@@ -4,6 +4,6 @@ JsRoutes.setup do |config|
   #   s    rake tmp:cache:clear
   #       before restarting your `rails s`.
   config.include = [
-    /^upvote_course$/, /^course_event_attendances$/
+    /^upvote_course$/, /^attendance_course_event$/
   ]
 end

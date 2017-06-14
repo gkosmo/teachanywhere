@@ -14,7 +14,9 @@ Rails.application.routes.draw do
     resources :subscriptions
     resources :reviews
     resources :events do
-      resources :attendances
+      member do
+        post :attendance
+      end
     end
   end
    get 'dashboard' => 'dashboards#show'
