@@ -2,7 +2,7 @@
   <div class="col-sm-8">
 
     <h1> <%= @course.title %> </h1>
-    <h2> <%= @course.content %></h2>
+    <h2> <%= simple_format(@course.content) %></h2>
     <br>
     <h2> Given by: <%= @course.user.email %></h2>
     <% if @current_user_course_subscription.empty? %>
@@ -33,7 +33,11 @@
     <h5> <i><%= rew.content %> </i> by: <b> <%= rew.user.email %> </b>  </h5>
     <% end %>
   </div>
+
+
   <div class="col-sm-6">
+
+
     <% unless @current_user_course_subscription.empty?%>
     <%= render 'review/form', review: @review %>
     <% end %>
@@ -44,9 +48,11 @@
 <div class="row">
   <div class="col-sm-12">
     <b>classes: </b>
+    <%= react_component "EventList",
+          render(template: 'events/index.json.jbuilder') %>
     <% @course.events.each do |event| %>
     <div class="col-sm-4">
-      <%= render 'events/event', event:event, teacher: @teacher%>
+      <% render 'events/event', event:event, teacher: @teacher%>
     </div>
     <% end %>
 
